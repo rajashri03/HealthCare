@@ -16,7 +16,15 @@ namespace BusinessLayer.Services
         }
         public string Login(LoginModel model)
         {
-            throw new NotImplementedException();
+            try
+            {
+                return iAdminRL.Login(model);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
 
         public UsersModel Registration(UsersModel users)
@@ -31,5 +39,67 @@ namespace BusinessLayer.Services
                 throw;
             }
         }
+        public MedicineModel AddMedicine(MedicineModel medicine, long userid)
+        {
+            try
+            {
+                return iAdminRL.AddMedicine(medicine,userid);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+        public IEnumerable<GetAllMedicine> GetAllMedicines()
+        {
+            try
+            {
+                return iAdminRL.GetAllMedicines();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        public IEnumerable<GetAllMedicine> GetAllMedicinesByid(long userid)
+        {
+            try
+            {
+                return iAdminRL.GetAllMedicinesByid(userid);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+        public IEnumerable<GetDoctors> GetAllDoctors()
+        {
+            try
+            {
+                return iAdminRL.GetAllDoctors();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+        public bool ApproveORNot(int userid, int approve)
+        {
+            try
+            {
+                return iAdminRL.ApproveORNot(userid,approve);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
     }
 }
